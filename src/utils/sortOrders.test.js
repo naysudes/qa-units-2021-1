@@ -64,14 +64,14 @@ describe('sortByDate function', () => {
 
 	it('first order', () => {
 		const order1 = {date: 5};
-	    const order2 = {date: 10};
+	    	const order2 = {date: 10};
 		const result = sortByDate(order2, order1);
 		expect(result).toBe(-1);
 	});
 
 	it('second order', () => {
 		const order1 = {date: 5};
-	    const order2 = {date: 10};
+	    	const order2 = {date: 10};
 		const result = sortByDate(order1, order2);
 		expect(result).toBe(1);
 	});
