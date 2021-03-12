@@ -28,7 +28,7 @@ describe('sortByItemCount function', () => {
 		expect(result).toBe(0);
 	});
 
-		it('wrong type', () => {
+	it('wrong type', () => {
 		const order3 = {items: "123"}
 		const result = sortByItemCount(order3, 1);
 
@@ -62,25 +62,28 @@ describe('sortByDate function', () => {
 		expect(result).toBe(0);
 	});
 
-	const order1 = {date: 5};
-	const order2 = {date: 10};
-
 	it('first order', () => {
+		const order1 = {date: 5};
+	    const order2 = {date: 10};
 		const result = sortByDate(order2, order1);
 		expect(result).toBe(-1);
 	});
 
 	it('second order', () => {
+		const order1 = {date: 5};
+	    const order2 = {date: 10};
 		const result = sortByDate(order1, order2);
 		expect(result).toBe(1);
 	});
 
 	it('equals', () => {
+		const order1 = {date: 5};
 		const result = sortByDate(order1, order1);
 		expect(result).toBe(0);
 	});
 
 	it('no date', () => {
+		const order1 = {date: 5};
 		const order3 = {nodate: 1}
 		const result = sortByDate(order3, order1);
 		expect(result).toBe(0);

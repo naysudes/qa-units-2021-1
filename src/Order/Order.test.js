@@ -1,5 +1,5 @@
 import React from 'react'
-import {configure, shallow} from "enzyme";
+import {configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Order from "./Order";
 import {getDate} from '../utils/getDate';
@@ -14,7 +14,7 @@ configure({adapter: new Adapter()});
 describe('Order.js', () => {
 
     afterAll(() => {
-        getDate.mockReset();
+        jest.resetModules();
     });
     beforeEach(() => {
         getDate.mockClear();
@@ -23,12 +23,12 @@ describe('Order.js', () => {
 
     it('no params', () => {
         const wrapper = shallow(<Order order={{}}/>);
-        expect(toJson(wrapper)).toMatchSnapshot();
+        expect(wrapper.getElement()).toBeNull();
     });
     
     it('empty', () => {
         const wrapper = shallow(<Order/>);
-        expect(toJson(wrapper)).toMatchSnapshot();
+        expect(wrapper.getElement()).toBeNull();
     });
 
     it('only data', () => {
@@ -36,7 +36,7 @@ describe('Order.js', () => {
         delete order.items;
         delete order.shop;
         const wrapper = shallow(<Order order={order}/>);
-        expect(toJson(wrapper)).toMatchSnapshot();
+       expect(wrapper.getElement()).toBeNull();
     });
 
     it('data and items', () => {

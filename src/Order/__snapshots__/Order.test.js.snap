@@ -42,9 +42,3 @@ exports[`Order.js data and items 1`] = `
   </div>
 </div>
 `;
-
-exports[`Order.js empty 1`] = `""`;
-
-exports[`Order.js no params 1`] = `""`;
-
-exports[`Order.js only data 1`] = `""`;
