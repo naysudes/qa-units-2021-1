@@ -36,6 +36,20 @@ describe('sortByItemCount function', () => {
 	});
 });
 
+describe('sortOrders function', () => {
+		it('not array', () => {
+		const result = sortOrders(1, 2);
+
+		expect(result).toBe(undefined);
+	});
+
+	it('not function', () => {
+		const result = sortOrders([1], 2);
+
+		expect(result).toBe(undefined);
+	});
+})
+
 describe('sortType function', () => {
 	it('sortByDate', () => {
 		const result = getSortFunction(sortTypes.DATE);

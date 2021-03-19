@@ -17,7 +17,6 @@ describe('Order.js', () => {
         jest.resetModules();
     });
     beforeEach(() => {
-        jest.resetModules();
         getDate.mockReturnValue(123);
     });
 
